@@ -11,6 +11,11 @@
         <servlet-name>BServlet</servlet-name>
         <servlet-class>cn.tianyu.servlet.BServlet</servlet-class>
     </servlet>
+    <filter>
+        <filter-name>AFilter</filter-name>
+        <filter-class>cn.tianyu.Filters.AFilter</filter-class>
+    </filter>
+
 
     <servlet-mapping>
         <servlet-name>AServlet</servlet-name>
@@ -20,6 +25,10 @@
         <servlet-name>BServlet</servlet-name>
         <url-pattern>/BServlet</url-pattern>
     </servlet-mapping>
+    <filter-mapping>
+        <filter-name>AFilter</filter-name>
+        <url-pattern>/AServlet</url-pattern>
+    </filter-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
