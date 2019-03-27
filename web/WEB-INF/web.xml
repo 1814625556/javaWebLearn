@@ -24,6 +24,10 @@
             <param-value>dongyan</param-value>
         </init-param>
     </filter>
+    <filter>
+        <filter-name>BFilter</filter-name>
+        <filter-class>cn.tianyu.Filters.BFilter</filter-class>
+    </filter>
 
     <servlet-mapping>
         <servlet-name>AServlet</servlet-name>
@@ -35,8 +39,40 @@
     </servlet-mapping>
     <filter-mapping>
         <filter-name>AFilter</filter-name>
-        <url-pattern>/AServlet</url-pattern>
+        <url-pattern>/AServlet</url-pattern><!--配置方式-->
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>BFilter</filter-name>
+        <servlet-name>AServlet</servlet-name><!--配置方式-->
+    </filter-mapping>
+
+    <filter>
+        <filter-name>CFilter</filter-name>
+        <filter-class>cn.tianyu.Filters.CFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CFilter</filter-name>
+        <url-pattern>/Jsps/B.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher><!--转发的时候会执行该过滤器-->
+    </filter-mapping>
+
+    <filter>
+        <filter-name>dfilter</filter-name>
+        <filter-class>cn.tianyu.Filters.DFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>dfilter</filter-name>
+        <url-pattern>/Jsps/Error.jsp</url-pattern>
+        <!--<dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>-->
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/Jsps/Error.jsp</location>
+    </error-page>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
