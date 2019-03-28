@@ -21,7 +21,7 @@ public class AFilter implements Filter {
     * 探究FilterConfig
     * */
     public void init(FilterConfig config) throws ServletException {
-        System.out.println("AFilter init....");
+        /*System.out.println("AFilter init....");
         String filterName = config.getFilterName();
         String val = config.getInitParameter("firstName");
         Enumeration names = config.getInitParameterNames();
@@ -32,7 +32,7 @@ public class AFilter implements Filter {
             String name =  (String) names.nextElement();
             String value = config.getInitParameter(name);
             System.out.println(name+" = "+value);
-        }
+        }*/
     }
 
 }
