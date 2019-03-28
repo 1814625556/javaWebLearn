@@ -78,11 +78,11 @@ public class AListener implements ServletContextListener,ServletRequestListener,
         ServletRequest request = servletRequestEvent.getServletRequest();
         String servletName = context.getServletContextName();
         System.out.println(servletName);*/
-        System.out.println("销毁request对象......");
+        System.out.println("ServletRequestListener-销毁request对象......");
     }
 
     @Override
     public void requestInitialized(ServletRequestEvent servletRequestEvent) {
-        System.out.println("创建request对象......");
+        System.out.println("ServletRequestListener-创建request对象......");
     }
 }
